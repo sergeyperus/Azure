@@ -444,7 +444,7 @@
       "westus2": "wu2",
       "westus3": "wu3"
     },
-    "LogAnalyticsWorkspaceName": "[HubMonitoring]",
+    "LogAnalyticsWorkspaceName": "HubMonitoring",
     "LogicAppName": "[format('la-{0}', parameters('ResourceNameSuffix'))]",
     "ManagedIdentityName": "[format('uami-{0}', parameters('ResourceNameSuffix'))]",
     "NetAppAccountName": "[format('naa-{0}', parameters('ResourceNameSuffix'))]",
