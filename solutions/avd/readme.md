@@ -4,15 +4,15 @@
 
 ### Azure Portal
 
-[![Deploy to Azure](https://aka.ms/deploytoazurebutton)](https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2Fjamasten%2FAzure%2Fmaster%2Fsolutions%2Favd%2Fsolution.json)
-[![Deploy to Azure Gov](https://raw.githubusercontent.com/Azure/azure-quickstart-templates/master/1-CONTRIBUTION-GUIDE/images/deploytoazuregov.svg?sanitize=true)](https://portal.azure.us/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2Fjamasten%2FAzure%2Fmaster%2Fsolutions%2Favd%2Fsolution.json)
+[![Deploy to Azure](https://aka.ms/deploytoazurebutton)](https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2Fsergeyperus%2FAzure%2Fmaster%2Fsolutions%2Favd%2Fsolution.json)
+[![Deploy to Azure Gov](https://raw.githubusercontent.com/Azure/azure-quickstart-templates/master/1-CONTRIBUTION-GUIDE/images/deploytoazuregov.svg?sanitize=true)](https://portal.azure.us/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2Fsergeyperus%2FAzure%2Fmaster%2Fsolutions%2Favd%2Fsolution.json)
 
 ### PowerShell
 
 ````powershell
 New-AzDeployment `
     -Location '<Azure location>' `
-    -TemplateFile 'https://raw.githubusercontent.com/jamasten/Azure/master/solutions/avd/solution.json' `
+    -TemplateFile 'https://raw.githubusercontent.com/sergeyperus/Azure/master/solutions/avd/solution.json' `
     -Verbose
 ````
 
@@ -21,7 +21,7 @@ New-AzDeployment `
 ````cli
 az deployment sub create \
     --location '<Azure location>' \
-    --template-uri 'https://raw.githubusercontent.com/jamasten/Azure/master/solutions/avd/solution.json'
+    --template-uri 'https://raw.githubusercontent.com/sergeyperus/Azure/master/solutions/avd/solution.json'
 ````
 
 ## Description
