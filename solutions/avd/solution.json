@@ -23,7 +23,7 @@
     },
     "AvdObjectId": {
       "type": "string",
-      "defaultValue": "cdcfb416-e2fe-41e2-be12-33813c1cd427",
+      "defaultValue": "704dfe6d-def5-4c43-8a1f-55693c1bf942",
       "metadata": {
         "description": "The Object ID for the Windows Virtual Desktop Enterprise Application in Azure AD.  The Object ID can found by selecting Microsoft Applications using the Application type filter in the Enterprise Applications blade of Azure AD."
       }
@@ -44,7 +44,7 @@
     },
     "DiskSku": {
       "type": "string",
-      "defaultValue": "Standard_LRS",
+      "defaultValue": "StandardSSD_LRS",
       "metadata": {
         "description": "The storage SKU for the AVD session host disks.  Production deployments should use Premium_LRS."
       },
@@ -72,7 +72,7 @@
     },
     "DomainName": {
       "type": "string",
-      "defaultValue": "jasonmasten.com",
+      "defaultValue": "pechenk.in",
       "metadata": {
         "description": "The name of the domain that provides ADDS to the AVD session hosts and is synchronized with Azure AD"
       }
@@ -210,7 +210,7 @@
     },
     "OuPath": {
       "type": "string",
-      "defaultValue": "OU=AADDC Computers,DC=jasonmasten,DC=com",
+      "defaultValue": "OU=AADDC Computers,DC=pechenk,DC=in",
       "metadata": {
         "description": "The distinguished name for the target Organization Unit in Active Directory Domain Services."
       }
@@ -288,7 +288,7 @@
     },
     "SecurityPrincipalId": {
       "type": "string",
-      "defaultValue": "f05646a6-dc96-4b13-99e9-678f10d30c10",
+      "defaultValue": "7be2ad4e-2a2c-426c-8cde-8e95153f4dd6",
       "metadata": {
         "description": "The Object ID for the Security Principal to assign to the AVD Application Group.  This Security Principal will be assigned the Desktop Virtualization User role on the Application Group."
       }
@@ -331,8 +331,7 @@
     "Tags": {
       "type": "object",
       "defaultValue": {
-        "Owner": "Jason Masten",
-        "Purpose": "POC",
+        "Solution": "AVD",
         "Environment": "Development"
       },
       "metadata": {
@@ -352,14 +351,14 @@
     },
     "VirtualNetwork": {
       "type": "string",
-      "defaultValue": "vnet-shd-net-d-eu",
+      "defaultValue": "avd-vnet-prod-northeu-001",
       "metadata": {
         "description": "Virtual network for the AVD sessions hosts"
       }
     },
     "VirtualNetworkResourceGroup": {
       "type": "string",
-      "defaultValue": "rg-shd-net-d-eu",
+      "defaultValue": "avd",
       "metadata": {
         "description": "Virtual network resource group for the AVD sessions hosts"
       }
@@ -445,7 +444,7 @@
       "westus2": "wu2",
       "westus3": "wu3"
     },
-    "LogAnalyticsWorkspaceName": "[format('law-{0}', parameters('ResourceNameSuffix'))]",
+    "LogAnalyticsWorkspaceName": "[HubMonitoring]",
     "LogicAppName": "[format('la-{0}', parameters('ResourceNameSuffix'))]",
     "ManagedIdentityName": "[format('uami-{0}', parameters('ResourceNameSuffix'))]",
     "NetAppAccountName": "[format('naa-{0}', parameters('ResourceNameSuffix'))]",
@@ -525,7 +524,7 @@
     },
     "VmName": "[format('vm{0}', parameters('ResourceNameSuffix'))]",
     "VmTemplate": "[format('{{\"domain\":\"{0}\",\"galleryImageOffer\":\"{1}\",\"galleryImagePublisher\":\"{2}\",\"galleryImageSKU\":\"{3}\",\"imageType\":\"Gallery\",\"imageUri\":null,\"customImageId\":null,\"namePrefix\":\"{4}\",\"osDiskType\":\"{5}\",\"useManagedDisks\":true,\"vmSize\":{{\"id\":\"{6}\",\"cores\":null,\"ram\":null}},\"galleryItemId\":\"{7}.{8}{9}\"}}', parameters('DomainName'), parameters('ImageOffer'), parameters('ImagePublisher'), parameters('ImageSku'), variables('VmName'), parameters('DiskSku'), parameters('VmSize'), parameters('ImagePublisher'), parameters('ImageOffer'), parameters('ImageSku'))]",
-    "WorkspaceName": "[format('ws-{0}', parameters('ResourceNameSuffix'))]"
+    "WorkspaceName": "[HubMonitoring]"
   },
   "resources": [
     {
