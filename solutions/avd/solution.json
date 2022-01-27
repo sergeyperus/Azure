@@ -79,7 +79,7 @@
     },
     "DomainServices": {
       "type": "string",
-      "defaultValue": "AzureActiveDirectory",
+      "defaultValue": "ActiveDirectory",
       "metadata": {
         "description": "The service providing domain services for Azure Virtual Desktop.  This is needed to determine the proper solution to domain join the Azure Storage Account."
       },
