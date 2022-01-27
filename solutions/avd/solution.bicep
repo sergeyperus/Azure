@@ -9,7 +9,7 @@ targetScope = 'subscription'
 param Availability string = 'None'
 
 @description('The Object ID for the Windows Virtual Desktop Enterprise Application in Azure AD.  The Object ID can found by selecting Microsoft Applications using the Application type filter in the Enterprise Applications blade of Azure AD.')
-param AvdObjectId string = 'cdcfb416-e2fe-41e2-be12-33813c1cd427'
+param AvdObjectId string = '704dfe6d-def5-4c43-8a1f-55693c1bf942'
 
 @description('Input RDP properties to add or remove RDP functionality on the AVD host pool. Settings reference: https://docs.microsoft.com/en-us/windows-server/remote/remote-desktop-services/clients/rdp-files?context=/azure/virtual-desktop/context/context')
 param CustomRdpProperty string = 'audiocapturemode:i:1;camerastoredirect:s:*;use multimon:i:0;drivestoredirect:s:;'
@@ -23,7 +23,7 @@ param DiskEncryption bool = false
   'Premium_LRS'
 ])
 @description('The storage SKU for the AVD session host disks.  Production deployments should use Premium_LRS.')
-param DiskSku string = 'Standard_LRS'
+param DiskSku string = 'StandardSSD_LRS'
 
 param DodStigCompliance bool = false
 
@@ -35,7 +35,7 @@ param DomainJoinPassword string
 param DomainJoinUserPrincipalName string
 
 @description('The name of the domain that provides ADDS to the AVD session hosts and is synchronized with Azure AD')
-param DomainName string = 'jasonmasten.com'
+param DomainName string = 'pechenk.in'
 
 @allowed([
   'ActiveDirectory' // Active Directory Domain Services
@@ -117,7 +117,7 @@ param LogAnalyticsWorkspaceSku string = 'PerGB2018'
 param MaxSessionLimit int = 2
 
 @description('The distinguished name for the target Organization Unit in Active Directory Domain Services.')
-param OuPath string = 'OU=AADDC Computers,DC=jasonmasten,DC=com'
+param OuPath string = 'OU=AADDC Computers,DC=pechenk,DC=in'
 
 @description('Enables the RDP Short Path feature: https://docs.microsoft.com/en-us/azure/virtual-desktop/shortpath')
 param RdpShortPath bool = false
@@ -151,7 +151,7 @@ param ScalingTimeDifference string = '-5:00'
 param ScreenCaptureProtection bool = false
 
 @description('The Object ID for the Security Principal to assign to the AVD Application Group.  This Security Principal will be assigned the Desktop Virtualization User role on the Application Group.')
-param SecurityPrincipalId string = 'f05646a6-dc96-4b13-99e9-678f10d30c10'
+param SecurityPrincipalId string = '7be2ad4e-2a2c-426c-8cde-8e95153f4dd6'
 
 @description('The name for the Security Principal to assign NTFS permissions on the Azure File Share to support FSLogix.  Any value can be input in this field if performing a deployment update or choosing a personal host pool.')
 param SecurityPrincipalName string = 'AVD'
@@ -166,12 +166,11 @@ param SessionHostIndex int = 0
 param StartVmOnConnect bool = true
 
 @description('The subnet for the AVD session hosts.')
-param Subnet string = 'Clients'
+param Subnet string = 'PooledHostsSubnet'
 
 @description('Key / value pairs of metadata for the Azure resources.')
 param Tags object = {
-  Owner: 'Jason Masten'
-  Purpose: 'POC'
+  Solution: 'AVD'
   Environment: 'Development'
 }
 
@@ -181,10 +180,10 @@ param TimeStamp string = utcNow('yyyyMMddhhmmss')
 param ValidationEnvironment bool = false
 
 @description('Virtual network for the AVD sessions hosts')
-param VirtualNetwork string = 'vnet-shd-net-d-eu'
+param VirtualNetwork string = 'avd-vnet-prod-northeu-001'
 
 @description('Virtual network resource group for the AVD sessions hosts')
-param VirtualNetworkResourceGroup string = 'rg-shd-net-d-eu'
+param VirtualNetworkResourceGroup string = 'avd'
 
 @secure()
 @description('Local administrator password for the AVD session hosts')
@@ -256,7 +255,7 @@ var LocationShort = {
   westus2: 'wu2'
   westus3: 'wu3'
 }
-var LogAnalyticsWorkspaceName = 'law-${ResourceNameSuffix}'
+var LogAnalyticsWorkspaceName = 'HubMonitoring'
 var LogicAppName = 'la-${ResourceNameSuffix}'
 var ManagedIdentityName = 'uami-${ResourceNameSuffix}'
 var NetAppAccountName = 'naa-${ResourceNameSuffix}'
