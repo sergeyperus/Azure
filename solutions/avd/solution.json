@@ -323,7 +323,7 @@
     },
     "Subnet": {
       "type": "string",
-      "defaultValue": "Clients",
+      "defaultValue": "PooledHostsSubnet",
       "metadata": {
         "description": "The subnet for the AVD session hosts."
       }
