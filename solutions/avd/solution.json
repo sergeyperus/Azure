@@ -371,7 +371,7 @@
     },
     "VmSize": {
       "type": "string",
-      "defaultValue": "Standard_B2s",
+      "defaultValue": "Standard_F16s_v2",
       "metadata": {
         "description": "The VM SKU for the AVD session hosts."
       }
