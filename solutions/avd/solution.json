@@ -288,7 +288,7 @@
     },
     "SecurityPrincipalId": {
       "type": "string",
-      "defaultValue": "7be2ad4e-2a2c-426c-8cde-8e95153f4dd6",
+      "defaultValue": "3a8b4c07-ece7-4f42-8d48-9c2765c745de",
       "metadata": {
         "description": "The Object ID for the Security Principal to assign to the AVD Application Group.  This Security Principal will be assigned the Desktop Virtualization User role on the Application Group."
       }
